@@ -16,6 +16,6 @@
 [submodule "src/github.com/llgcode/draw2d"]
 	path = src/github.com/llgcode/draw2d
 	url = https://github.com/llgcode/draw2d
-[submodule "src/golang.org/x/image"]
-	path = src/golang.org/x/image
-	url = "https://golang.org/x/image"
+[submodule "src/golang.org/x/image/tiff"]
+	path = src/golang.org/x/image/tiff
+	url = "https://golang.org/x/image/tiff"
