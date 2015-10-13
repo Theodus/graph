@@ -1,0 +1,9 @@
+[submodule "src/github.com/gonum/internal"]
+	path = src/github.com/gonum/internal
+	url = https://github.com/gonum/internal
+[submodule "src/github.com/gonum/plot"]
+	path = src/github.com/gonum/plot
+	url = https://github.com/gonum/plot
+[submodule "src/github.com/llgcode/draw2d"]
+	path = src/github.com/llgcode/draw2d
+	url = https://github.com/llgcode/draw2d
