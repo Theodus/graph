@@ -14,6 +14,7 @@ func main() {
 		fmt.Println("Too many arguments! I can only use one file at a time.")
 		return
 	}
+	//todo read in absolute path of file
 	filename := args[0]
 	if err := Parse(filename); err != nil {
 		panic(err)

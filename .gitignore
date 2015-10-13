@@ -4,3 +4,4 @@ graph.iml
 src/github.com
 src/golang.org
 .DS_Store
+bin
