@@ -25,6 +25,7 @@ func Parse(filename string) error {
 	fmt.Println("Reading", filename)
 	b, err := ioutil.ReadFile(filename)
 	if err != nil {
+    fmt.Println("this right here")
 		return err
 	}
 	if err := json.Unmarshal(b, &d); err != nil {
