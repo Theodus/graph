@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+  "bufio"
 )
 
 func main() {
@@ -13,13 +14,29 @@ func main() {
 }
 
 func cmd(cmdName string, cmdArgs []string) {
-  var (
-		cmdOut []byte
-		err    error
-	)
-	if cmdOut, err = exec.Command(cmdName, cmdArgs...).Output(); err != nil {
-		fmt.Fprintln(os.Stderr, "error running command: ", err)
+	cmd := exec.Command(cmdName, cmdArgs...)
+	cmdReader, err := cmd.StdoutPipe()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "Error creating StdoutPipe for Cmd", err)
 		os.Exit(1)
 	}
-  fmt.Println(string(cmdOut))
+
+	scanner := bufio.NewScanner(cmdReader)
+	go func() {
+		for scanner.Scan() {
+			fmt.Printf(scanner.Text())
+		}
+	}()
+
+	err = cmd.Start()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "Error starting Cmd", err)
+		os.Exit(1)
+	}
+
+	err = cmd.Wait()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "Error waiting for Cmd", err)
+		os.Exit(1)
+	}
 }
