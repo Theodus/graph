@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+  cmd("go", []string{"get", "github.com/gonum/plot"})
   cmd("go", []string{"install", "graph"})
   fmt.Println("binary palaced in bin/")
 }
