@@ -6,7 +6,7 @@
 	url = https://github.com/golang/freetype
 [submodule "src/github.com/gonum/floats"]
 	path = src/github.com/gonum/floats
-	url = https://github.com/golnum/floats
+	url = https://github.com/gonum/floats
 [submodule "src/github.com/gonum/internal"]
 	path = src/github.com/gonum/internal
 	url = https://github.com/gonum/internal
