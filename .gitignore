@@ -1,6 +1,7 @@
 .idea
 pkg
 graph.iml
+src/bitbucket.org
 src/github.com
 src/golang.org
 .DS_Store
