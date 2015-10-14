@@ -1,8 +1,12 @@
-package main_test
+package main
 
-import "testing"
+import (
+  "testing"
+)
 
 func TestParse(t *testing.T) {
-    t.Log("yup")
+  err := Parse("test/testgraph.json")
+  if err != nil {
+    t.Fatal(err)
+  }
 }
-//todo test parse func

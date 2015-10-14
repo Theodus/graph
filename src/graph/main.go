@@ -11,10 +11,10 @@ func main() {
 		fmt.Println("Please specify the JSON file for me to use.")
 		return
 	} else if len(args) > 1 {
-		fmt.Println("Too many arguments! I can only use one file at a time.")
+		fmt.Println("Too many arguments!")
 		return
 	}
-	//todo read in absolute path of file
+	
 	filename := args[0]
 	if err := Parse(filename); err != nil {
 		panic(err)

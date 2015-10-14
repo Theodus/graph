@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-  	"bufio"
+  "bufio"
 )
 
 func main() {
   cmd("go", []string{"get", "-v", "github.com/gonum/plot"})
+  cmd("go", []string{"test", "-v", "graph"})
   cmd("go", []string{"install", "graph"})
-  fmt.Println("binary palaced in bin/")
+  fmt.Println("\nbinary palaced in bin/")
 }
 
 func cmd(cmdName string, cmdArgs []string) {
@@ -24,7 +25,7 @@ func cmd(cmdName string, cmdArgs []string) {
 	scanner := bufio.NewScanner(cmdReader)
 	go func() {
 		for scanner.Scan() {
-			fmt.Printf(scanner.Text())
+			fmt.Println(scanner.Text())
 		}
 	}()
 

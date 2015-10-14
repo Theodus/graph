@@ -4,7 +4,7 @@
   "y": "Distance (m)",
   "w": 400,
   "h": 300,
-  "file": "src/graph/test/testgraph1.pdf",
+  "file": "test/testgraph.pdf",
   "curves": [
     {
       "name":"Ball1",
