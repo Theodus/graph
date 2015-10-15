@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	cmd("go", []string{"get", "github.com/gonum/plot"})
-	cmd("go", []string{"test", "graph"})
+	cmd("go", []string{"get", "-v", "github.com/gonum/plot"})
+	cmd("go", []string{"test", "-v", "graph"})
 	cmd("go", []string{"install", "graph"})
 	fmt.Println("\nbinary palaced in bin/")
 }
