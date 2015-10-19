@@ -7,17 +7,18 @@ import (
 )
 
 type Data struct {
-  Name   string
-	X      string
-	Y      string
-	W      int
-	H      int
-	File   string
+	Name   string `json:"name"`
+	X      string `json:"x"`
+	Y      string `json:"y"`
+	W      int    `json:"w"`
+	H      int    `json:"h"`
+	File   string `json:"file"`
 	Curves []struct {
-		Name string
-		X    []float64
-		Y    []float64
-	}
+		Name string    `json:"name"`
+		RGB  []uint8   `json:"rgb"`
+		X    []float64 `json:"x"`
+		Y    []float64 `json:"y"`
+	} `json:"curves"`
 }
 
 func Parse(filename string) error {
@@ -33,7 +34,7 @@ func Parse(filename string) error {
 	fmt.Println("Graphing...")
 	g, err := NewGraph(d.Name, d.X, d.Y)
 	for _, e := range d.Curves {
-		c := &Curve{Name: e.Name}
+		c := &Curve{Name: e.Name, RGB: e.RGB}
 		for i := range e.X {
 			c.AddPoint(e.X[i], e.Y[i])
 		}

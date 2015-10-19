@@ -14,9 +14,12 @@ func main() {
 		fmt.Println("Too many arguments!")
 		return
 	}
-	
+
 	filename := args[0]
 	if err := Parse(filename); err != nil {
+		if err.Error() == "bad RGB" {
+			fmt.Println("RGB must be 3 numbers between 0 and 255")
+		}
 		panic(err)
 	}
 }

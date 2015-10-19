@@ -2,6 +2,7 @@ package main
 
 type Curve struct {
 	Name   string
+	RGB    []uint8
 	Points Points
 }
 
